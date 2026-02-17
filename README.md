@@ -95,7 +95,7 @@ npm run preview
 
 ## Authors
   * **João Oneta**
-  * Turma de Atividade de Extensão II (IFSul — TSI)
+  * Students from the Atividade de Extensão II class (IFSul — TSI)
 
 Please follow github and join us! 
 Thanks to visiting me and good coding!
