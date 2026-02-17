@@ -1,43 +1,101 @@
-# Monitoramento Meteorológico Online da Zona Rural de Charqueadas
-O projeto surge a partir de uma demanda da **EMATER de Charqueadas**, instituição que presta assistência técnica essencial aos produtores rurais da região. Atualmente, a EMATER não dispõe de uma ferramenta digital para o acompanhamento agrometeorológico local, dependendo de dados manuais e dispersos — como medições de pluviômetros convencionais enviadas por e-mail. Essa limitação impacta diretamente as decisões estratégicas do agronegócio, como o planejamento de safras e a decretação de situação de calamidade pública.
+![Logo of the project](./public/project-images/1.png)
 
-![print do site](https://github.com/IFSul-Charqueadas-Extensao/dashboard-emater/blob/main/print-site-emater.png)
+## Monitoramento Meteorológico Online da Zona Rural de Charqueadas
+Monitoramento Meteorológico Online da Zona Rural de Charqueadas is an interactive dashboard developed for the EMATER of Charqueadas to monitor local agrometeorological conditions. It integrates data from public sources and serves as a proof of concept for a future low-cost IoT rain gauge network connected to an institute-owned API. 
+Developed by students from Atividade de Extensão II (IFSul — Tecnologia em Sistemas para Internet).
 
-Em resposta a essa necessidade, estudantes da turma de **Atividade de Extensão II** do curso de Tecnologia em Sistemas para Internet do IFSul desenvolveram uma prova de conceito de um dashboard interativo, integrando dados de fontes públicas e projetando uma futura rede de pluviômetros IoT de baixo custo conectados a uma API própria do Instituto 
+## Technology 
 
-Está assumido que, em cada distrito, estará instalado um pluviômetro IoT que envia medições para uma API, projetando uma futura rede de pluviômetros IoT de baixo custo, conectados a uma API própria do IFSul. A rede de pluviômetros pode ser desenvolvida por outros projetos. _A dashboard, combinada com os pluviômetros, permitirá à EMATER e aos produtores rurais o monitoramento em tempo real das condições climáticas dos principais distritos rurais de Charqueadas e, futuramente, de toda a região carbonífera._
+Here are the technologies used in this project.
 
-### APIs Públicas de dados meteorológicos 
+* React + Vite
+* Leaflet
+* React-Leaflet
+* React Router DOM
+* OpenStreetMap
+* Chart.js + react-chartjs-2
+* @phosphor-icons/react
 
-- **EMBRAPA** - a [AgroAPI](https://www.agroapi.cnptia.embrapa.br/portal/) da EMBRAPA fornece dados baseados em latitude e longitude, atualmente utilizados na demonstração da POC. Limitações: os dados se mostraram bastante imprecisos e há um número limitado de requisições gratuitas mensais.
-- **INMET** - Dados do [Instituto Nacional de Meteorologia](https://tempo.inmet.gov.br/TabelaEstacoes/B812) também foram avaliados, mas o INMET não possui API pública para consulta de dados e, em Charqueadas, há apenas uma estação meteorológica. Para emular a rede de pluviômetros, um único ponto de dados é insuficiente.
+## Services Used
 
-## Apêndice - texto dos alunos
+* EMBRAPA - AgroAPI
+* INMET
+* OpenStreetMap
+* IFSul - Deploy
 
-As ferramentas e tecnologias utilizadas nos códigos para o mapa interativo foram:
+## Packages / Libraries
 
-1. **React + Vite** - Esta é a base do projeto. React é uma biblioteca JavaScript para construir interfaces de usuário de forma declarativa e eficiente. Vite é um "bundler" e servidor de desenvolvimento extremamente rápido que otimiza a forma como o código é empacotado para o navegador. A combinação dos dois é uma das pilhas de tecnologia mais populares e eficientes para criar aplicações web modernas.
-2. **Leaflet** - É uma biblioteca JavaScript de código aberto e totalmente gratuita, projetada para criar mapas interativos. A principal vantagem do Leaflet é que é leve e focado na simplicidade, mas ainda assim oferece todas as funcionalidades essenciais de mapeamento, como zoom, pan e marcações, sem a necessidade de APIs pagas.
-3. **React-Leaflet** - Esta biblioteca funciona como uma "ponte" entre o React e o Leaflet. Em vez de manipular o DOM diretamente como o Leaflet faz, o React-Leaflet permite que você use os recursos do Leaflet como componentes React. Isso torna a criação e o gerenciamento do mapa mais "React-like", aproveitando o sistema de componentes, o estado e as propriedades.
-4. **React Router DOM** - O React Router DOM é a biblioteca padrão para gerenciar a navegação em aplicações React de página única (Single Page Applications). Ele permite que você defina diferentes rotas (URLs) para sua aplicação, como / para o mapa principal e /bairro/:nomeBairro para a página de detalhes, criando uma experiência de navegação fluida sem recarregar a página inteira.
-5. **OpenStreetMap** - O OpenStreetMap (OSM) é uma fonte de dados de mapas gratuita e de código aberto, criada por uma comunidade global. É a "base" visual do mapa que aparece no seu projeto. Utilizamos os TileLayers do OSM, que são as "peças" de imagem do mapa, para preencher o fundo da sua aplicação. É uma excelente alternativa gratuita a serviços como Google Maps ou Mapbox, que costumam cobrar pelo uso.
+* @phosphor-icons/react
+* react-router-dom
+* leaflet
+* react-leaflet
+* chart.js
+* react-chartjs-2
 
-Em resumo, a escolha dessas ferramentas baseou-se em uma combinação de fatores: são gratuitas, amplamente utilizadas na comunidade e se integram de forma coesa, oferecendo uma solução completa e eficiente para o projeto.
+## Getting started
 
-### Utilização
+* Dependency
+  - Node.js (18+ recommended)
+  - npm (or pnpm/yarn)
 
-Consulte o arquivo `agroapi-primeiros-passos-token.pdf` para gerar tokens e substituir os valores no arquivo `.env`.
-Caso ocorra o `Erro 429` (_Too Many Requests_), o token expirou e deve ser gerado novamente.
+* Usage
+  - Check the `agroapi-primeiros-passos-token.pdf` file to generate tokens and replace the values in the `.env` file.
+  - If you get `Error 429` (Too Many Requests), the token has expired and must be generated again.
 
-```bash
-### Instalação de Pacotes
+* Package installation
+~~~bash
 npm install
 npm install @phosphor-icons/react
 npm install react-router-dom
 npm install react-chartjs-2 chart.js
-```
+~~~
 
-### Links da aplicação implantada
+* To run the project:
 
-- [Link Provisório](https://dashboard-emater-henrique.vercel.app/) disponibilizado na nuvem e mantido por um aluno.
-- [Link Permanente](https://extensao.charqueadas.ifsul.edu.br/dashboard-emater) que está em preparação no domínio da disciplina [https://extensao.charqueadas.ifsul.edu.br/](https://extensao.charqueadas.ifsul.edu.br/)
+~~~bash
+npm run dev
+~~~
+
+* Build / Preview:
+
+~~~bash
+npm run build
+npm run preview
+~~~
+
+- `/`: Initial Page
+
+![Initial page](./public/project-images/1.png)
+
+- `/clima/:nomeBairro/temperatura`: Temperature and Air Conditions
+
+![Temperature](./public/project-images/2.png)
+
+- `/clima/:nomeBairro/nuvens`: Clouds and Sun
+
+![Clouds](./public/project-images/3.png)
+
+- `/clima/:nomeBairro/agua`: Water
+
+![Water](./public/project-images/4.png)
+
+- `/clima/:nomeBairro/dados`: Data Summary
+
+![Summary](./public/project-images/5.png)
+
+## Links
+  - Link: https://extensao.charqueadas.ifsul.edu.br/dashboard-emater
+  - Repository: https://github.com/joaooneta/dashboard-emater
+    - In case of sensitive bugs like security vulnerabilities, please joaomatheusoneta01@gmail.com directly instead of using issue tracker. We value your effort to improve the security and privacy of this project!
+
+  ## Versioning
+
+  1.0.0.0
+
+
+## Authors
+  * **João Oneta**
+  * Turma de Atividade de Extensão II (IFSul — TSI)
+
+Please follow github and join us! 
+Thanks to visiting me and good coding!
